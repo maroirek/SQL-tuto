@@ -37,4 +37,10 @@ from employees group by first_name order by first_name ;
 
 
 select salary , count(emp_no) as emps_with_same_salary
-from salaries where salary>80000 order by salary ; 
+from salaries where salary>80000 group by salary  order by salary ; 
+
+select first_name, count(first_name) as names_count
+from employees where hire_date > '1999-01-01' 
+group by first_name having count(first_name<200);
+# having can be succeded by an aggregate function, where nope
+
